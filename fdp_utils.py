@@ -4,6 +4,7 @@ from haversine import haversine,inverse_haversine,Direction
 from plotly import graph_objs as go
 import numpy as np
 import streamlit as st
+import streamlit.config as config
 
 with open('./point.json','r') as f:
     point_json =json.load(f)
@@ -258,8 +259,9 @@ def create_volume_plot(volume_name):
     poly_plot=[]
     for i in polygon:
         poly_plot.append([[i][0][1],[i][0][0]])
-    
-    mapbox_token=open('./mapbox_token.txt').read().strip()
+	
+    mapbox_token = config.get_option("mapbox.token")
+    #mapbox_token=open('./mapbox_token.txt').read().strip()
     
     fig = go.Figure(go.Scattermapbox(
     mode = "markers",
