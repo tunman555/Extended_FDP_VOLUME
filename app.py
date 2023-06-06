@@ -52,3 +52,5 @@ with row2_col2:
 row3_col1 = st.columns(1)
 if show_3d:
     st.plotly_chart(fig2, theme="streamlit", use_container_width=True)
+      
+st.info('Powered by Panuwat P SE.SE.', icon="ℹ️")
