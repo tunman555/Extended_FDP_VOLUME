@@ -259,7 +259,7 @@ def create_volume_plot(volume_name):
     poly_plot=[]
     for i in polygon:
         poly_plot.append([[i][0][1],[i][0][0]])
-    mapbox_token = st.secret['mapbox_token']
+    mapbox_token = st.secrets['mapbox_token']
     #mapbox_token = config.get_option("mapbox.token")
     #mapbox_token=open('./mapbox_token.txt').read().strip()
     
@@ -339,7 +339,7 @@ def create_sector_plot(sector_name):
     center,min_,max_ = find_center_sector(lat,lon)
     zoom = get_zoom(min_,max_)
 
-    mapbox_token = st.secret['mapbox_token']
+    mapbox_token = st.secrets['mapbox_token']
     #mapbox_token = config.get_option("mapbox.token")
     #mapbox_token=open('./mapbox_token.txt').read().strip()
     
