@@ -338,9 +338,9 @@ def create_sector_plot(sector_name):
     lat,lon = get_latlon(polygon_list)
     center,min_,max_ = find_center_sector(lat,lon)
     zoom = get_zoom(min_,max_)
-
-    mapbox_token=open('./mapbox_token.txt').read().strip()
-
+    mapbox_token = config.get_option("mapbox.token")
+    #mapbox_token=open('./mapbox_token.txt').read().strip()
+    
     fig = go.Figure(go.Scattermapbox(
     mode = "lines",fill="toself",opacity=0.1,
     lon = lon, lat = lat))
